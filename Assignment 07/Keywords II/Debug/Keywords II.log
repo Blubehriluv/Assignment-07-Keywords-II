@@ -1,3 +1,4 @@
 ﻿  Source.cpp
 c:\users\taymcken\documents\github\assignment-07-keywords-ii\assignment 07\keywords ii\source.cpp(67): warning C4018: '<': signed/unsigned mismatch
-  Keywords II.vcxproj -> C:\Users\taymcken\Documents\GitHub\Assignment-07-Keywords-II\Assignment 07\Debug\Keywords II.exe
+Source1.obj : error LNK2005: _main already defined in Source.obj
+C:\Users\taymcken\Documents\GitHub\Assignment-07-Keywords-II\Assignment 07\Debug\Keywords II.exe : fatal error LNK1169: one or more multiply defined symbols found

@@ -22,30 +22,16 @@ int main()
 	random_shuffle(words.begin(), words.end());
 
 	const string THE_WORD = words[0];
-		//words to guess
+	//words to guess
 	int wrong = 0;
-		//number of incorrect guesses
+	//number of incorrect guesses
 	string soFar(THE_WORD.size(), '-');
-		//word guessed so far
+	//word guessed so far
 	string used = "";
-		//letters already guessed
-
-	char guess;
-		//player's guess
+	//letters already guessed
 
 	cout << "Welcome, Agent 626. We've been expecting you." << endl;
 	cout << "The Training Course for Deciphering will now begin." << endl;
-
-	system("pause");
-
-	//TAKING PLAYER GUESSES
-	void guesses()
-	{
-		cout << "\n\nEnter your guess: ";
-		cin >> guess;
-		guess = toupper(guess);
-	}
-
 
 
 	//MAIN LOOPY LOOP
@@ -56,8 +42,15 @@ int main()
 		cout << "\nYou've used the following letters:\n" << used << endl;
 		cout << "\nSo far, the word is:\n" << soFar << endl;
 	}
-	
-	if (used.find(guess) != string::npos)
+
+
+	//TAKING PLAYER GUESSES
+	char guess;
+	cout << "\n\nEnter your guess: ";
+	cin >> guess;
+	guess = toupper(guess);
+
+	while (used.find(guess) != string::npos)
 	{
 		cout << "\nYou've already guessed " << guess << endl;
 		cout << "Enter your guess: ";
@@ -70,7 +63,7 @@ int main()
 	if (THE_WORD.find(guess) != string::npos)
 	{
 		cout << "That's right! " << guess << " is in the word.\n";
-			//update soFar to include the newly guessed letter
+		//update soFar to include the newly guessed letter
 		for (int i = 0; i < THE_WORD.length(); ++i)
 		{
 			if (THE_WORD[i] == guess)
@@ -78,6 +71,11 @@ int main()
 				soFar[i] = guess;
 			}
 		}
+	}
+	else
+	{
+		cout << "Sorry Agent, " << guess << " isn't in the password.\n" << endl;
+		++wrong;
 	}
 
 
@@ -94,5 +92,4 @@ int main()
 
 	cout << "\nThe word was " << THE_WORD << endl;
 	return 0;
-	system("pause");
 }
