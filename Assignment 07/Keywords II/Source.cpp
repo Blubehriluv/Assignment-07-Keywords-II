@@ -30,8 +30,22 @@ int main()
 	string used = "";
 		//letters already guessed
 
+	char guess;
+		//player's guess
+
 	cout << "Welcome, Agent 626. We've been expecting you." << endl;
 	cout << "The Training Course for Deciphering will now begin." << endl;
+
+	system("pause");
+
+	//TAKING PLAYER GUESSES
+	void guesses()
+	{
+		cout << "\n\nEnter your guess: ";
+		cin >> guess;
+		guess = toupper(guess);
+	}
+
 
 
 	//MAIN LOOPY LOOP
@@ -42,13 +56,6 @@ int main()
 		cout << "\nYou've used the following letters:\n" << used << endl;
 		cout << "\nSo far, the word is:\n" << soFar << endl;
 	}
-
-
-	//TAKING PLAYER GUESSES
-	char guess;
-	cout << "\n\nEnter your guess: ";
-	cin >> guess;
-	guess = toupper(guess);
 	
 	if (used.find(guess) != string::npos)
 	{
